@@ -15,7 +15,7 @@ En2 = ["manpower","take on","downsize","lay off","give notice","dismiss","dismis
 Fr3 = ["demande, requête","évaluer","évaluation,analyse","démissionner","signe, panneau","démissions"
        ,"mutation, muter","transférant / cédant","sélectionner","employer"]
 
-En3 = ["application","asses","assessement","resign","sign","resignation"
+En3 = ["application","assess","assessement","resign","sign","resignation"
        ,"transfer","transferring","shortlisting","employ"]
 
 Fr4 = ["emploi","bulletin de paie","heures supplémentaires","avantages en nature","bénévole","avenant"
@@ -44,7 +44,7 @@ En7 = ["temp agency","provide a reference","clock in/out","appointee"
 Fr8 = ["congé familial","renoncer à","employé transférés","etre sur la liste de candidats","présélectionner quelque chose"
        ,"employeur","employé,salarié","période d'essai"]
 
-En8 = ["family leave","resigned","transferrd","to be shortlisted","shortlist"
+En8 = ["family leave","resigned","transferred","to be shortlisted","shortlist"
        ,"employer","employee","trial period"]
 
 Fr9 = ["à plein temps","àtemps partiel","salaire horaire","augmentation,augmeneter"
@@ -76,11 +76,11 @@ def ajouterMot():
 continuer = "oui"
 manche = 1
 aReviser = []
+score = 0
 
 
 while (continuer == "oui"):
        mot = []
-       score = 0
        mot = ajouterMot()
        for i in range(0,10):
               print(mot[i][0]," ?")
@@ -95,7 +95,8 @@ while (continuer == "oui"):
        print(score,"/",10*manche)
        manche+=1
        if score != 10 :
-              print("vous devez reviser : ")
+              print("vous devez reviser : \n")
               for k in range(0,len(aReviser)):
                      print(aReviser[k][1] , " qui veux dire ", aReviser[k][0])
+       print("")
        continuer=input("voulez vous continuer ? (oui pour continuer) ")
