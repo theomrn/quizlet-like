@@ -74,7 +74,7 @@ continuer = "oui"
 while (continuer == "oui"):
        for k in range(0,9):
               i = randint(0, 9)
-              j = randint(0, 9)
+              j = randint(0, len(En[i]))
               print(Fr[i][j], " ? ");
               reponse = input()
               if (En[i][j] != reponse):
