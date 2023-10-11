@@ -3,7 +3,7 @@ from random import *
 Fr1 = ["(taux de) présence du personnel" , "dédaigneux / condéscendant","éloge","évaluateur, expert","motivation","acceptant / contestant"
        ,"alors que , tandis que","par la présente","intérimaire","prestataire","poste vacant"]
 
-En1 = ["Staff attendance","dismissive","praise","assesor","incentive","agreeing"
+En1 = ["Staff attendance","dismissive","praise","assessor","incentive","agreeing"
        ,"whereas","hereby","temp","contractor","vacancy"]
 
 Fr2 = ["main d'oeuvre, effectifs","embaucher","réduire les effectifs","licencier pour motif économique","donner son preavis","renvoyer","licencié"
@@ -16,7 +16,7 @@ Fr3 = ["demande, requête","évaluer","évaluation,analyse","démissionner","sig
        ,"mutation, muter","transférant / cédant","sélectionner","employer"]
 
 En3 = ["application","asses","assessement","resign","sign","resignation"
-       ,"trasfer","transferring","shortlisting","employ"]
+       ,"transfer","transferring","shortlisting","employ"]
 
 Fr4 = ["emploi","bulletin de paie","heures supplémentaires","avantages en nature","bénévole","avenant"
        ,"ci-dessous","respecter","avoir droit","lier, obliger","tenu,relié"]
@@ -75,6 +75,7 @@ def ajouterMot():
 
 continuer = "oui"
 manche = 1
+aReviser = []
 
 
 while (continuer == "oui"):
@@ -86,9 +87,15 @@ while (continuer == "oui"):
               reponse = input()
               if (mot[i][1] != reponse):
                      print("la bonne réponse est : ", mot[i][1])
+                     print("")
+                     aReviser.append(mot[i])
               else:
-                     print("bien joué ! ")
+                     print("bien joué ! \n")
                      score+=1
        print(score,"/",10*manche)
        manche+=1
+       if score != 10 :
+              print("vous devez reviser : ")
+              for k in range(0,len(aReviser)):
+                     print(aReviser[k][1] , " qui veux dire ", aReviser[k][0])
        continuer=input("voulez vous continuer ? (oui pour continuer) ")
