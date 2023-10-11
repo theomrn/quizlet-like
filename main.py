@@ -45,7 +45,7 @@ Fr8 = ["congé familial","renoncer à","employé transférés","etre sur la list
        ,"employeur","employé,salarié","période d'essai"]
 
 En8 = ["family leave","resigned","transferrd","to be shortlisted","shortlist"
-       ,"employer","employee","trial periode"]
+       ,"employer","employee","trial period"]
 
 Fr9 = ["à plein temps","àtemps partiel","salaire horaire","augmentation,augmeneter"
        ,"avantages","à son compte","partie","un accord","prévu/approuvé","qui lie"]
@@ -62,18 +62,33 @@ En10 = ["binder","wage","affraid of","capable of","jalous of","accuse somebody o
 En = [En1,En2,En3,En4,En5,En6,En7,En8,En9,En10]
 Fr = [Fr1,Fr2,Fr3,Fr4,Fr5,Fr6,Fr7,Fr8,Fr9,Fr10]
 
-print(len(En[0]))
+
+def ajouterMot():
+       mot = []
+       while (len(mot)<=10):
+              i = randint(0, 9)
+              j = randint(0, len(En[i])-1)
+              if (Fr[i][j],En[i][j]) not in mot:
+                     mot.append((Fr[i][j],En[i][j]))
+       return mot
+
 
 continuer = "oui"
+manche = 1
+
 
 while (continuer == "oui"):
-       for k in range(0,9):
-              i = randint(0, 9)
-              j = randint(0, len(En[i]))
-              print(Fr[i][j])
-              reponse = input(" ? ")
-              if (En[i][j] != reponse):
-                     print("la bonne réponse est : ", En[i][j])
+       mot = []
+       score = 0
+       mot = ajouterMot()
+       for i in range(0,10):
+              print(mot[i][0]," ?")
+              reponse = input()
+              if (mot[i][1] != reponse):
+                     print("la bonne réponse est : ", mot[i][1])
               else:
                      print("bien joué ! ")
+                     score+=1
+       print(score,"/",10*manche)
+       manche+=1
        continuer=input("voulez vous continuer ? (oui pour continuer) ")
