@@ -1,15 +1,28 @@
 from random import *
 
 Fr = [["annonce","qui en a assez de","s'excuser de","responsable de","payer","agressivement","peu soucieux de","se renseigner sur","adjacent","ajuster"]
-      ,["rappeler quelque chose a quelqu'un","ajustement","rire de","admirer","faché de/avec","admettre","avancé","poser sa candidature","admettre","avancé"]
-      ,[]]
+      ,["rappeler quelque chose a quelqu'un","ajustement","rire de","admirer","faché de/avec","admettre","avancé","poser sa candidature","candidat","chaine"]
+      ,["adherence","capasité","adherent","abordable","demander","agenda","tenir à","agent","agression","adhérer"]
+      ,["désolé de","désolé de","allouer","attendre","catégorie","alternative","adresse","content de","annuelment","anxiété"]
+      ,["anxieux","certain de","appétit","inquiet au sujet de","rire de","application","appliquer","parler de","apprécier","qui connait bien"]
+      ,["appréhensif","content de","apprenti","aller avec","approche","s'occuper de","arranger","appartenir à","arrangement","contre,opposé à"]
+      ,["aspect","similaire à","assembler","écouter","assistance","attendre avec impatience","associer","parler à","assurance","dépendre de"]
+      ,["assurer","intéressé par","attitude","réussir","attirer","abondant","attirant","accepter","attrayant","acceptable"]
+      ,["audience","accès","accessibles","autoriser","automatique","accomodant","automatiquement","accompagner","automatisation","accomplir"]
+      ,["base","accomplissement","bénéfique","accumuler","accumulation","breuvage","budget","acquérir","calcul","action"]]
 
 En = [["annoucement","tired of","apologize for","responsible for","pay for","aggresively","careless about","ask about","adjacent","adjust"]
-      ,["remind somebody of","adjustement","laught at","admire","angry at","admit","advanced"]
-      ,[]]
-print(len(En)==len(Fr))
+      ,["remind somebody of","adjustement","laught at","admire","angry at","admit","advanced","apply for","candidate","chain"]
+      ,["adherence","capasity","adherent","affordable","ask for","agenda","care for","agent","aggression","adhere"]
+      ,["sorry about","sorry for","allocate","wait for","category","alternative","addresse","happy about","annualy","anxiety"]
+      ,["anxious","sure about","appetite","worried about","laught about","application","apply","talk about","appreciate","familiar with"]
+      ,["apprehensive","happy with","apprentice","belong with","approach","deal with","arrange","belong to","arrangement","opposed to"]
+      ,["aspect","similar to","assemble","listen to","assist","look forward to","associate","talk to","assurance","depend on"]
+      ,["assure","insit in","attitude","suceed in","attract","abundant","attraction","accept","attractive","acceptable"]
+      ,["audience","access","accessible","authorize","automatic","accommodating","automatically","accompany","autmation","accomplish"]
+      ,["base","accomplishment","beneficial","accumulate","accumulation","beverage","budget","acquerire","calculation","action"]]
 
-"""
+
 def ajouterMot():
     mot = []
     while (len(mot) <= 10):
@@ -38,7 +51,7 @@ while (continuer == "oui"):
         else:
             print("bien joué ! \n")
             score += 1
-    print(score, "/", 10 * manche)
+    print((score/manche)*100, "%")
     manche += 1
     if score != 10:
         print("vous devez reviser : \n")
@@ -46,4 +59,3 @@ while (continuer == "oui"):
             print(aReviser[k][1], " qui veux dire ", aReviser[k][0])
     print("")
     continuer = input("voulez vous continuer ? (oui pour continuer) ")
-"""
