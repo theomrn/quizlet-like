@@ -30,17 +30,24 @@ En = [["annoucement","tired of","apologize for","responsible for","pay for","agg
       ,["apprehensive","happy with","apprentice","belong with","approach","deal with","arrange","belong to","arrangement","opposed to"]
       ,["aspect","similar to","assemble","listen to","assist","look forward to","associate","talk to","assurance","depend on"]
       ,["assure","insit in","attitude","suceed in","attract","abundant","attraction","accept","attractive","acceptable"]
-      ,["audience","access","accessible","authorize","automatic","accommodating","automatically","accompany","autmation","accomplish"]
+      ,["audience","access","accessible","authorize","automatic","accommodating","automatically","accompany","automation","accomplish"]
       ,["base","accomplishment","beneficial","accumulate","accumulation","beverage","budget","acquerire","calculation","action"]]
 
 
 def ajouterMot(connu):
     mot = []
-    while (len(mot) <= 10):
-        i = randint(0, 9)
-        j = randint(0, len(En[i]) - 1)
-        if (Fr[i][j], En[i][j])  not in mot and (Fr[i][j], En[i][j]) not in connu:
-            mot.append((Fr[i][j], En[i][j]))
+    if (len(connu)<90):
+        while (len(mot) <= 10):
+            i = randint(0, 9)
+            j = randint(0, len(En[i]) - 1)
+            if (Fr[i][j], En[i][j])  not in mot and (Fr[i][j], En[i][j]) not in connu:
+                mot.append((Fr[i][j], En[i][j]))
+    else :
+        while (len(mot) <= 100-len(connu)):
+            i = randint(0, 9)
+            j = randint(0, len(En[i]) - 1)
+            if (Fr[i][j], En[i][j])  not in mot and (Fr[i][j], En[i][j]) not in connu:
+                mot.append((Fr[i][j], En[i][j]))
     return mot
 
 
@@ -67,9 +74,9 @@ while (continuer == "oui"):
             score += 1
     print((score/manche)*10, "%")
     manche += 1
-    if (score/manche)*10 != 100:
-        print("vous devez reviser : \n")
-        for k in range(0, len(aReviser)):
-            print(aReviser[k][1], " qui veux dire ", aReviser[k][0])
     print("")
-    continuer = input("voulez vous continuer ? (oui pour continuer) ")
+    continuer = input("voulez vous continuer ? (oui pour continuer) \n")
+
+print("vous devez reviser : \n")
+for k in range(0, len(aReviser)):
+    print(aReviser[k][1], " qui veux dire ", aReviser[k][0])
