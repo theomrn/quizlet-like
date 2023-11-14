@@ -51,7 +51,7 @@ if (s != 100 or d != 100):
       print(s,d)
 
 
-"""
+
 def ajouterMot(connu):
     mot = []
     if (len(connu) < 90):
@@ -103,4 +103,3 @@ while (continuer == "oui"):
 print("vous devez reviser : \n")
 for k in range(0, len(aReviser)):
     print(aReviser[k][1], " qui veux dire ", aReviser[k][0])
-"""
