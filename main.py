@@ -22,7 +22,7 @@ Fr = [["Comptabilité","s'ennyer,ennuyeux","A destination de","Frein,Freiner","S
     , ["citoyen","citoyenneté,nationalité","présider","president","faire payer,frais","accuser,inculper","tableau,courbe graphique","pas cher","verifier,controler","compte courant"]
     , ["se présenter à l'enregistrement","regler sa note et rendre la chambre d'hotel","nourrice","hâcher","revendication,reclamation,declaration de sinistre","degager,defricher","employé","intelligent","fermer définitivement","monter,grimper"]
     , ["s'écrouler,s'éffondrer","baisser","sortir","sugir,apparaitre","avoir/trouver/penser à","pub à la radio/tv","engagement","trajet,voyager(tous les jours)","banlieusard(qui fait la navette)","concurrence"]
-    , ["concurrent","se plaindre","plaite","achèvement,aboutissement","gratuit","conforme à","se soumettre,respecter,etre conforme à","inquiet","mener","se conformer à"]
+    , ["concurrent","se plaindre","plainte","achèvement,aboutissement","gratuit","conforme à","se soumettre,respecter,etre conforme à","inquiet","mener","se conformer à"]
     , ["feliciter quelqu'un","envoi","travaux","récipient","entrepeneur","comptoir","quelques","coursier","fomation","couverture"]
     , ["artisant","se planter,s'effondrer","equipe,equipage","culture,recolte","foule","bondé,plein de gens","croisière","monnaie,devise","actuel,actuellement,en ce moment","client"]]
 
@@ -31,13 +31,14 @@ En = [["book-keeping","bore,boring","bound","brake","branch","brand name","brand
     ,["broom","browse","bulk","butcher","cabinet","call","call back","call off","cancel","cancelation"]
     ,["can't help","can't stand","carry on","carry out","catch","cater","caterer","catering","central heating","ceo"]
     ,["citizen","citizenship","chair","chairman","charge","charge somebody with something","chart","cheap","check","checking account"]
-    ,["check in","check out","childminder","chop","claim","clear","clerk","clever","close down","clim"]
+    ,["check in","check out","childminder","chop","claim","clear","clerk","clever","close down","climb"]
     ,["collapse","come down","come out","come up","compe up with","commercial","commitment","commute","commuter","competition"]
     ,["competitor","complain","complait","completion","complimentary","compliant with","comply with","concerned","conduct","conform"]
     ,["congratulate","consignment","construction","container","contractor","counter","couple","courier","course","coverage"]
     ,["craftman,craftmen","crash","crew","crop","crowd","crowded","cruise","currency","current","customer"]]
 
 
+"""
 for i in range(0,10):
         if (not(len(En[i]) == len(Fr[i]))):
             print(i , len(En[i]), len(Fr[i]))
@@ -49,7 +50,7 @@ for i in range(0,10):
 
 if (s != 100 or d != 100):
       print(s,d)
-
+"""
 
 
 def ajouterMot(connu):
@@ -75,11 +76,11 @@ aReviser = []
 score = 0
 connu = []
 
-
+"""
 for i in range(0,10):
     aReviser = aReviser + En[i]
 print(aReviser)
-
+"""
 while (continuer == "oui"):
     mot = []
     mot = ajouterMot(connu)
