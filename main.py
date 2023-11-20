@@ -36,6 +36,13 @@ def ajouterMot(En,Fr):
     return mot
 
 def test(En,Fr):
+    """
+    fonction test , demande tous les mots de la liste , s'ils sont connu les supprime ,
+    pour arreter la boucle il faut soit connaitre tous les mots soit mettre -1 en reponse
+    :param En: liste des mots en anglais
+    :param Fr: liste des mots en fraçais
+    :return: Ø
+    """
     score = 0
     total = 0
     mot = ajouterMot(En,Fr)
@@ -51,14 +58,22 @@ def test(En,Fr):
             total += 1
         else:
             print("bien joué ! \n")
-            del mot[i]
             score += 1
             total += 1
+            del mot[i]
+            if (len(mot) == 0): break
     print("fin du programme")
     print("vous avez fais ", score, " / ", total)
 
 def apprendre(En, Fr):
+    """
+    La fonction apprendre va faire passer les mots de toutes la listes , au bout de 3 fois ils sont supprimé
+    :param En: liste des mots en anglais
+    :param Fr: liste des mots en fraçais
+    :return: Ø
+    """
     aReviser = [0 for i in range(len(En))]
+    # liste initialiser a 0 , elle va servir a compter le nombre de fois qu'on mot a été connu
     print("pour stoper la boucle mettre -1")
     reponse = ""
     score = 0
@@ -95,6 +110,8 @@ print("voulez vous apprendre ou faire un test ?")
 rep = int(input("1 pour apprendre et 2 pour reviser \n"))
 
 if rep == 1:
+    print("\n apprendre vous demande tous les mots vous devez avoir bon 3 fois de suite pour que le mot soit concidérer comme connu \n")
     apprendre(En,Fr)
 else :
+    print("test vous donne tous les mots une fois et vous donne un score")
     test(En,Fr)
