@@ -1,46 +1,34 @@
 from random import *
 
-Fr = ["Comptabilité","s'ennyer,ennuyeux","A destination de","Frein,Freiner","Succursale","Marque (d'un produit)","tout neuf","pause,casser","Tomber en panne","Cambrioler,cambriolage"
-    , "percer","découverte,percée","porte-document,attaché-case","baisser","avancer","sortir,lancer,faire paraître","élever (un enfant)","ADSL","diffiser,diffusion","courtier"
-    , "balai","feuilleter,parcourir","en gros (vente)","boucher","placard","appeler,un appel","rappeler au telephone","annuler","annuler2","Annulation"
-    , "ne pas s'empecher","détester,ne pas supporter","continuer à","réaliser,faire","attraper","fournir la nourriture,s'adresser a","traiteur","restauration,buffet","chauffage central","directeur général"
-    , "citoyen","citoyenneté,nationalité","présider","president","faire payer,frais","accuser,inculper","tableau,courbe graphique","pas cher","verifier,controler","compte courant"
-    , "se présenter à l'enregistrement","regler sa note et rendre la chambre d'hotel","nourrice","hâcher","revendication,reclamation,declaration de sinistre","degager,defricher","employé","intelligent","fermer définitivement","monter,grimper"
-    , "s'écrouler,s'éffondrer","baisser","sortir","sugir,apparaitre","avoir/trouver/penser à","pub à la radio/tv","engagement","trajet,voyager(tous les jours)","banlieusard(qui fait la navette)","concurrence"
-    , "concurrent","se plaindre","plainte","achèvement,aboutissement","gratuit","conforme à","se soumettre,respecter,etre conforme à","inquiet","mener","se conformer à"
-    , "feliciter quelqu'un","envoi","travaux","récipient","entrepeneur","comptoir","quelques","coursier","fomation","couverture"
-    , "artisant","se planter,s'effondrer","equipe,equipage","culture,recolte","foule","bondé,plein de gens","croisière","monnaie,devise","actuel,actuellement,en ce moment","client"]
+Fr = ["douane","Réduire,réduction","reduire","reduction (en depense/personnel/production","quotidien","tableau de bord","jour de congés","date limite","affaire,marché,opération","traiter,s'occuper de,gerer,avoir"
+      ,"Concessionnaire","concession","sans aucun doute","retard,retarder","charcuterie","ravi,heureux,enchanté","livrer,livraison","exiger,exigense","exigeant","retrograder"
+      ,"cabosser,bosseler","nier","service (d'une entreprise)","deposer un depot (de l'argent)","meriter","ordinateur,PC","info,précisions,coordonnées","promoteur","composer,numéroter,cadran","agenda"
+      ,"creuser","de la terre,saleté","handicapé, en panne","déçu","décvant","déception","reduction,remise","maladie","assiette,plat","licencier avec faute"
+      ,"licenciement","expedier","a la disposition de","distraire","déranger","mettre un terme à,abolir","réduire (le nombre d'employer)","baisse","brouuillon,courrant d'air,rédiger","selectionner et deplacer,glisser-poser"
+      ,"beaucoup","inconcénients","tiroir","retire (de l'argent)","dédiger,dresser","epouvantable,redoutable","permis de conduire","faire,laisser tomber","passer (par), venir,aller","deposer"
+      ,"sécheresse","decharger","poussière","hollandais","tremblement de terre","reduire,detruire petit à petit","bord","efficassement","ascenseur","urgence"
+      ,"emploi","permettre","ci-joint (dans une lettre)","occupé (la ligne,le tel)","améliorer","appreécier,aimer","demande de renseignements","s'inscrire,inscription","garantir","autorisé,avoir droit à"
+      ,"bien que,même si","finalement","cadre (supérieur)","s'attendre à","attente","dépense","dépense,frais","cher","supplémentaire","tissu"
+      ,"équipements,installation,service","usine","échouer,manquer de,ne pas (faire)","echec,ne pas (faire)","juste","de façon juste,plutôt,assez","automne,une chute","tomber,baisser","prendre du retard","échouer,tomber à l'eau"
+      ,"tarif","la mode","robinet","peur","caractèristiquenspécialité,article de journal","mettre en vedette","frais","retour (d'info),réaction","aller chercher","domaine,champ"
+      ,"chiffre","fichier,dossier,ranger en fiche,lime,limer,soumettre","meuble de classeur","compléter,remplir","se renseigner,découvir","amende,donner une amende","licencier ( avec faute)","de première heure"]
 
-En = ["book-keeping","bore,boring","bound","brake","branch","brand name","brand new","break","break down","break in"
-    ,"break into","breakthrough","briefcase","bring down","bring forward","bring out","bring up","broadband","broadcast","broker"
-    ,"broom","browse","bulk","butcher","cabinet","call","call back","call off","cancel","cancelation"
-    ,"can't help","can't stand","carry on","carry out","catch","cater","caterer","catering","central heating","ceo"
-    ,"citizen","citizenship","chair","chairman","charge","charge somebody with something","chart","cheap","check","checking account"
-    ,"check in","check out","childminder","chop","claim","clear","clerk","clever","close down","climb"
-    ,"collapse","come down","come out","come up","compe up with","commercial","commitment","commute","commuter","competition"
-    ,"competitor","complain","complait","completion","complimentary","compliant with","comply with","concerned","conduct","conform"
-    ,"congratulate","consignment","construction","container","contractor","counter","couple","courier","course","coverage"
-    ,"craftman,craftmen","crash","crew","crop","crowd","crowded","cruise","currency","current","customer"]
-
-
-"""
-Debug
-for i in range(0,10):
-        if (not(len(En[i]) == len(Fr[i]))):
-            print(i , len(En[i]), len(Fr[i]))
-
-s = d = 0
-for i in range(0,10):
-      s += len(En[i])
-      d += len(Fr[i])
-
-if (s != 100 or d != 100):
-      print(s,d)
-"""
+En = ["customs","cut","cut back/down","cutback","daily","dashboard","day off","dealine","deal","deal with"
+      ,"dealer","dealershop","definitely","delay","delicatessen","delighted","deliver,delivery","demand","demanding","demote"
+      ,"dent","deny","department","deposit","deserve","desktop","details","developer","dial","diary"
+      ,"dig","dirt","disabled","disappointed","disappointing","disappointment","discount","disease","dish","dismiss"
+      ,"dismissal","dispatch","disposal","distract","disturb","do away with","downsize","downturn","draft","drag and drop"
+      ,"dramatically","drawback","drawer","draw out","draw up","dreadful","driving licence","drop","drop by","drop off"
+      ,"drought","dump","dust","dutch","earthquake","eat away at","edge","efficiently","elevator","emergency"
+      ,"employment","enable","enclosed","engaged","enhance","enjoy","enquiry,enquiries","enrol,enrolment","ensure","entitled"
+      ,"even though","eventually","executive","expect","expectation","expenditure","expenses","expensive","extra","fabric"
+      ,"facility","factory","fail","faillure","fair","fairly","fall","fall","fall behind with","fall through"
+      ,"faire","fashion","faucet","fear","feature","feature","fee","feedback","fetch","field"
+      ,"figure","file","filling cabinet","fill in/out","find out","fine","fire","first thing"]
 
 def ajouterMot(En,Fr):
     mot = []
-    while (len(mot) < 100):
+    while (len(mot) < len(En)):
         i = randint(0, len(En)-1)
         mot.append((En[i],Fr[i]))
         del En[i]
