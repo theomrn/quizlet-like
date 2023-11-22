@@ -65,6 +65,52 @@ def test(En,Fr):
     print("fin du programme")
     print("vous avez fais ", score, " / ", total)
 
+def aleaMot(i,En,Fr):
+    mot = []
+    while (len(mot)<=i):
+        k = randint(0,len(En)-1)
+        if ([En[k],Fr[k]] not in mot):
+            mot.append((En[k],Fr[k]))
+    return mot
+
+def apprendreImots(En,Fr):
+    # liste initialiser a 0 , elle va servir a compter le nombre de fois qu'on mot a été connu
+    print("pour stoper la boucle mettre -1")
+    score = 0
+    total = 0
+    continuer = "oui"
+    i = int(input("combien de mots voulez vous revisé ? \n"))
+    mot = aleaMot(i, En, Fr)
+    aReviser = [0 for i in range(len(mot))]
+    while (continuer == "oui"):
+        for j in range(0, i):
+            alea = randint(0,len(mot)-1)
+            print(mot[alea][1], " ?")
+            reponse = input()
+            if (mot[alea][0] != reponse):
+                print("la bonne réponse est : ", mot[alea][0])
+                print("")
+                total += 1
+            else:
+                print("bien joué ! \n")
+                aReviser[alea] += 1
+                score += 1
+                total += 1
+                if (aReviser[alea] == 3):
+                    del aReviser[alea]
+                    del En[alea]
+                    del Fr[alea]
+                if (len(aReviser) == 0):
+                    break
+        continuer = input("voulez vous continuer ?\n")
+    print("fin du programme")
+    print("vous avez fais ", score, " / ", total)
+    print("")
+    if (len(aReviser) != 0):
+        print("mot a reviser :")
+        for i in range(0, len(aReviser)):
+            print(En[i], " qui veux dire ", Fr[i])
+
 def apprendre(En, Fr):
     """
     La fonction apprendre va faire passer les mots de toutes la listes , au bout de 3 fois ils sont supprimé
@@ -78,25 +124,28 @@ def apprendre(En, Fr):
     reponse = ""
     score = 0
     total = 0
-    while (reponse != "-1"):
-        i = randint(0,len(En)-1)
-        print(Fr[i], " ?")
-        reponse = input()
-        if (En[i] != reponse):
-            print("la bonne réponse est : ", En[i])
-            print("")
-            total+=1
-        else:
-            print("bien joué ! \n")
-            aReviser[i] += 1
-            score += 1
-            total += 1
-            if(aReviser[i] == 3):
-                del aReviser[i]
-                del En[i]
-                del Fr[i]
-            if (len(aReviser)==0):
-                break
+    continuer = "oui"
+    while (continuer == "oui"):
+        for j in range(0,10):
+            i = randint(0,len(En)-1)
+            print(Fr[i], " ?")
+            reponse = input()
+            if (En[i] != reponse):
+                print("la bonne réponse est : ", En[i])
+                print("")
+                total+=1
+            else:
+                print("bien joué ! \n")
+                aReviser[i] += 1
+                score += 1
+                total += 1
+                if(aReviser[i] == 3):
+                    del aReviser[i]
+                    del En[i]
+                    del Fr[i]
+                if (len(aReviser)==0):
+                    break
+        continuer = input("voulez vous continuer ?\n")
     print("fin du programme")
     print("vous avez fais ",score," / ",total)
     print("")
@@ -107,11 +156,14 @@ def apprendre(En, Fr):
 
 
 print("voulez vous apprendre ou faire un test ?")
-rep = int(input("1 pour apprendre et 2 pour reviser \n"))
+rep = int(input("1 pour apprendre et 2 pour reviser ou 3 pour reviser une liste restrainte \n"))
 
 if rep == 1:
     print("\n apprendre vous demande tous les mots vous devez avoir bon 3 fois de suite pour que le mot soit concidérer comme connu \n")
     apprendre(En,Fr)
-else :
+if rep == 2:
     print("test vous donne tous les mots une fois et vous donne un score")
-    test(En,Fr)
+    test(En, Fr)
+if rep == 3:
+    print("\n apprendre vous demande i  mots vous devez avoir bon 3 fois de suite pour que le mot soit concidérer comme connu \n")
+    apprendreImots(En,Fr)
