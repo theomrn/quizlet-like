@@ -82,9 +82,9 @@ def apprendreImots(En,Fr):
     i = int(input("combien de mots voulez vous revisé ? \n"))
     mot = aleaMot(i, En, Fr)
     aReviser = [0 for i in range(len(mot))]
-    while (continuer == "oui"):
+    while (len(aReviser)>0):
         for j in range(0, i):
-            alea = randint(0,len(mot)-1)
+            alea = randint(0, len(mot) - 1)
             print(mot[alea][1], " ?")
             reponse = input()
             if (mot[alea][0] != reponse):
@@ -98,11 +98,9 @@ def apprendreImots(En,Fr):
                 total += 1
                 if (aReviser[alea] == 3):
                     del aReviser[alea]
-                    del En[alea]
-                    del Fr[alea]
+                    del mot[alea]
                 if (len(aReviser) == 0):
                     break
-        continuer = input("voulez vous continuer ?\n")
     print("fin du programme")
     print("vous avez fais ", score, " / ", total)
     print("")
