@@ -117,6 +117,7 @@ def apprendre(En, Fr):
     :return: Ø
     """
     aReviser = [0 for i in range(len(En))]
+    nonConnu = []
     # liste initialiser a 0 , elle va servir a compter le nombre de fois qu'on mot a été connu
     print("pour stoper la boucle mettre -1")
     reponse = ""
@@ -131,6 +132,7 @@ def apprendre(En, Fr):
             if (En[i] != reponse):
                 print("la bonne réponse est : ", En[i])
                 print("")
+                nonConnu.append([Fr[i],En[i]])
                 total+=1
             else:
                 print("bien joué ! \n")
@@ -144,13 +146,14 @@ def apprendre(En, Fr):
                 if (len(aReviser)==0):
                     break
         continuer = input("voulez vous continuer ?\n")
+        print("score : ",(total/score)*10,"%")
     print("fin du programme")
     print("vous avez fais ",score," / ",total)
     print("")
-    if(len(aReviser)!=0):
+    if(len(nonConnu)!=0):
         print("mot a reviser :")
-        for i in range(0,len(aReviser)):
-            print(En[i]," qui veux dire ",Fr[i])
+        for i in range(0,len(aReviser)-1):
+            print(nonConnu[i][1]," qui veux dire ",nonConnu[i][0])
 
 
 print("voulez vous apprendre ou faire un test ?")
